@@ -104,7 +104,6 @@ def read_sql_query(sql, text_to_sql):
         st.write(sql)
         # Execute the SQL query
         cur.execute(sql)
-
         # Fetch all the rows
         rows = cur.fetchall()
         conn.commit()

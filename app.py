@@ -121,7 +121,7 @@ def get_gemini_response(question,prompt):
     
 #main fucntion if button= TRUE
 def main():
-    audio_file_path = "recorded_audio.m4a"
+    audio_file_path = "recorded_audio.m4a" 
     record_button = st.button("हिंदी")
     if record_button:
         record_and_transcribe_audio(audio_file_path)   #1

@@ -102,7 +102,12 @@ def detect_language():
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Listening...")
-        audio = r.listen(source)
+        st.write("Listening...")
+        try:
+            audio = r.listen(source, timeout=3)
+            # Process the audio here
+        except sr.WaitTimeoutError:
+            print("Listening timed out.")
     
     try:
         detected_language = r.recognize_google(audio)  # Let Google API detect the language
@@ -163,5 +168,3 @@ if __name__ == "__main__":
                 stripped = str(row[0]).replace('(', '').replace(')', '').replace(',', '')
                 print(row)
                 st.header(stripped)
-        
-
